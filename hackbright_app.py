@@ -18,7 +18,7 @@ def make_new_student(first_name, last_name, github):
     CONN.commit()
     print "Successfully added student:%s %s" % (first_name, last_name)
 
-def get_project_title(project_title):
+def get_project_title(project_title): 
     query = """SELECT * FROM Projects WHERE title = ?"""
     DB.execute(query, (project_title,))
     row = DB.fetchone()
@@ -34,7 +34,7 @@ def make_new_project(title, description, max_grade):
     CONN.commit()
     print "Successfully added project: %s" % (title)
 
-def get_grade(github, project_title):
+def get_grade(github, project_title):   #### ???????????
     query = """SELECT grade FROM
     Grades JOIN Students ON
     (github = student_github)
